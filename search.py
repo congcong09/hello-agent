@@ -23,7 +23,7 @@ def search(query: str) -> str:
 
         search = GoogleSearch(params)
         results = search.get_dict()
-        print(results)
+        # print(results)
 
         # 智能解析:优先寻找最直接的答案
         if "answer_box_list" in results:

@@ -1,8 +1,6 @@
 from typing import Any
 
-import search
-
-print("search", search)
+from search import search
 
 
 class ToolExecutor:
@@ -36,11 +34,14 @@ if __name__ == "__main__":
     toolExecutor = ToolExecutor()
 
     search_description = "一个网页搜索引擎。当你需要回答关于时事、事实以及在你的知识库中找不到的信息时，应使用此工具。"
+    # 注册一个 工具
     toolExecutor.register("Search", search_description, search)
 
+    # 打印可用工具
     print("\n---- 可用工具 ----")
     print(toolExecutor.getAvailableTools())
 
+    # 问题
     print("\n--- 执行 Action: Search['英伟达最新的GPU型号是什么'] ---")
     tool_name = "Search"
     tool_input = "英伟达最新的GPU型号是什么"
